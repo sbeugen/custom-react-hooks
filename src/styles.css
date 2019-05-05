@@ -1,0 +1,51 @@
+body {
+  font-family: Roboto;
+  overflow: hidden;
+}
+
+#App {
+  padding: 50px;
+}
+
+select, input {
+  font-size: 1.2em;
+  background: none;
+  border: none;
+  outline: none;
+  display: block;
+}
+
+button {
+  margin-top: 15px;
+  background-color: #4CAF50;
+  border: none;
+  color: #FFFFFF;
+  padding: 10px 25px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.popover {
+  background: white;
+  position: relative;
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: 1px solid red;
+  box-shadow: 5px 5px 5px lightgray;
+}
+
+.arrow {
+  background: white;
+  position: absolute;
+  left: -6px;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  border-left: 1px solid red;
+  border-bottom: 1px solid red;
+  z-index: 100;
+}
+
