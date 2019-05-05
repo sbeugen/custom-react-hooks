@@ -31,8 +31,6 @@ const CustomSelect = ({ value, name, placeholder, onChange, options, errorMessag
 		}
 	}, [errorMessage, showPopover, hidePopover]);
 
-	const elementRef = useErrorPopover(errorMessage);
-
 	return (
 		<select
 			style={{ borderBottom: `1px solid ${errorMessage ? "red" : "blue"}` }}
@@ -47,39 +45,6 @@ const CustomSelect = ({ value, name, placeholder, onChange, options, errorMessag
 			))}
 		</select>
 	);
-};
-
-const useErrorPopover = errorMessage => {
-	const elementRef = useRef(null);
-
-	const showPopover = useCallback(() => {
-		if (errorMessage) {
-			$(elementRef.current)
-				.popover({
-					content: errorMessage,
-					template:
-						'<div class="popover" role="tooltip"><div class="arrow"></div><div class="popover-body"></div></div>'
-				})
-				.popover("show");
-		}
-	}, [errorMessage]);
-
-	const hidePopover = useCallback(() => {
-		$(elementRef.current).popover("hide");
-	}, []);
-
-	useEffect(() => {
-		const element = elementRef.current;
-		if (element) {
-			element.onfocus = showPopover;
-			element.onblur = hidePopover;
-		}
-		if (!errorMessage) {
-			hidePopover();
-		}
-	}, [errorMessage, showPopover, hidePopover]);
-
-	return elementRef;
 };
 
 export default CustomSelect;

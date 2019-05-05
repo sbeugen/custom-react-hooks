@@ -20,7 +20,7 @@ const App = () => {
 							<CustomSelect
 								value={props.values.favoriteHook}
 								name="favoriteHook"
-                placeholder="Select your favorite hook *"
+								placeholder="Select your favorite hook *"
 								onChange={props.handleChange}
 								errorMessage={props.errors.favoriteHook}
 								options={[
